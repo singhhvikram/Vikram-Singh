@@ -1,205 +1,594 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikram Singh - Training & Cloud Specialist</title>
+    <title>Vikram Singh | Cloud Architect & L&D Specialist</title>
+    <meta name="description" content="Portfolio of Vikram Singh - Cloud Architect, Ops/L&D Specialist, and Digital Marketing Professional.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151f32',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        primary: {
+                            400: '#38bdf8', // Light Blue
+                            500: '#0ea5e9', // Blue
+                            600: '#0284c7', // Dark Blue
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom Styles & Configuration */
-        :root {
-            --primary-color: #00796b; /* Dark Teal */
-            --secondary-color: #004d40; /* Darker Green/Teal */
-            --bg-light: #f4f7f6;
-            --text-dark: #2c3e50; /* Dark Blue Text */
-        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
         }
-        .header-bg {
-            background-color: #34495e; /* Dark header background */
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .section-title {
-            border-left-color: var(--primary-color);
-            color: var(--secondary-color);
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
         }
-        .job-title {
-            color: var(--primary-color);
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Timeline connector line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #334155;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-primary-500 selection:text-white">
 
-    <div class="header-bg py-8 shadow-xl">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-1">Vikram Singh</h1>
-            <h2 class="text-xl sm:text-2xl font-light opacity-80 mb-4">Training Specialist | Cloud Architect | Digital Marketing Expert</h2>
-            
-            <ul class="flex flex-wrap justify-center text-sm sm:text-base font-medium">
-                <li class="mx-3 my-1">New Delhi, 110077</li>
-                <li class="mx-3 my-1">
-                    <a href="tel:+917982748767" class="hover:text-cyan-300 transition">+91 7982748767</a>
-                </li>
-                <li class="mx-3 my-1">
-                    <a href="mailto:vikram.singh165@gmail.com" class="hover:text-cyan-300 transition">vikram.singh165@gmail.com</a>
-                </li>
-                <li class="mx-3 my-1">
-                    <a href="https://www.linkedin.com/in/vikram-singh-41b600ab" target="_blank" class="hover:text-cyan-300 transition">LinkedIn Profile</a>
-                </li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-tight text-white">
+                        <span class="text-primary-400">V</span>S
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#experience" class="hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
+                        <a href="#education" class="hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Education</a>
+                        <a href="#contact" class="bg-primary-600 hover:bg-primary-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors ml-4">Contact Me</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pb-12">
-        
-        <section class="mb-8 p-6 bg-white rounded-lg shadow-md">
-            <h3 class="section-title text-2xl font-semibold border-l-4 pl-3 mb-4">Professional Summary</h3>
-            <p class="text-gray-700">
-                Results-driven IT professional with over <strong>9 years of diverse experience</strong> in IT-enabled services (ITES), digital marketing, and cloud architecture. Expert in leading high-performing teams, optimizing complex processes, and achieving exceptional campaign performance with a focus on exceeding SLAs. Adept at translating business goals into actionable strategies and leveraging cutting-edge technology, including <strong>Generative AI LLMs</strong>, to enhance learning experiences and operational efficiencies. Proven track record in customer care operations and technical support, consistently maintaining a <strong>First Call Resolution (FCR) rate above 90%</strong>.
-            </p>
-        </section>
-
-        <section class="mb-8 p-6 bg-white rounded-lg shadow-md">
-            <h3 class="section-title text-2xl font-semibold border-l-4 pl-3 mb-6">Core Competencies & Skills</h3>
-            
-            <h4 class="text-xl font-bold text-gray-800 mb-2 border-b pb-1">Training & Development</h4>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Curricular Framework Design</span>
-                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Instructional Design</span>
-                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Gen AI for Learning</span>
-                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Stakeholder Consulting</span>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="hover:bg-slate-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="hover:bg-slate-700 block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#experience" class="hover:bg-slate-700 block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-primary-400">Contact</a>
             </div>
-            
-            <h4 class="text-xl font-bold text-gray-800 mb-2 border-b pb-1">Cloud & Technology</h4>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Cloud Architecture</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Generative AI LLMs</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Google Cloud Platform (App Dev)</span>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Microsoft Azure (Infrastructure)</span>
-            </div>
+        </div>
+    </nav>
 
-            <h4 class="text-xl font-bold text-gray-800 mb-2 border-b pb-1">Digital Marketing</h4>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Google Ads (Search, Display, Video, App)</span>
-                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Campaign Optimization</span>
-                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">ROI Maximization</span>
-                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Audience Segmentation</span>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <header id="about" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
 
-        <section class="mb-8 p-6 bg-white rounded-lg shadow-md">
-            <h3 class="section-title text-2xl font-semibold border-l-4 pl-3 mb-6">Professional Experience</h3>
-
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="flex justify-between items-start flex-wrap">
-                    <h4 class="job-title text-lg font-semibold">Training Specialist, Cognizant</h4>
-                    <span class="text-sm text-gray-500 font-medium mt-1 sm:mt-0">May 2025 - Present</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="animate-fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-slate-800 border border-slate-700 text-primary-400 text-sm font-semibold mb-6">
+                    Available for New Opportunities
+                </span>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
+                    Vikram <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-500">Singh</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
+                    Ops/L&D Specialist & Cloud Architect.<br>
+                    <span class="text-slate-500 text-lg">Blending 9+ years of ITES operations with modern Cloud Architecture & Generative AI solutions.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <a href="mailto:vikram.singh165@gmail.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:text-lg transition-all shadow-lg shadow-primary-500/25">
+                        <i class="fas fa-envelope mr-2"></i> Email Me
+                    </a>
+                    <a href="#experience" class="inline-flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-slate-300 bg-transparent hover:bg-slate-800 md:text-lg transition-all">
+                        View Work
+                    </a>
                 </div>
-                <p class="text-sm text-gray-600 mb-3">Gurugram, Haryana, India</p>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-700 text-sm">
-                    <li>Lead the development and implementation of a curricular framework for all Google Ads training to drive tangible business results.</li>
-                    <li>Leverage <strong>Generative AI LLMs</strong> to create hyper-personalized learning experiences and improve operational efficiencies.</li>
-                    <li>Consult with business partners and stakeholders to define effective training strategies that support evolving products and workflows.</li>
-                    <li>Analyze trends in quality results and product launches to anticipate learning needs and devise appropriate training interventions.</li>
-                    <li>Manage the full instructional design process, including timelines and delivery coordination.</li>
-                </ul>
-            </div>
-            
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="flex justify-between items-start flex-wrap">
-                    <h4 class="job-title text-lg font-semibold">Process Specialist, Cognizant</h4>
-                    <span class="text-sm text-gray-500 font-medium mt-1 sm:mt-0">July 2022 - Present</span>
-                </div>
-                <p class="text-sm text-gray-600 mb-3">Gurugram, Haryana, India</p>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-700 text-sm">
-                    <li>Lead a team of professionals to successfully achieve project goals and deliverables.</li>
-                    <li>Develop and implement strategies to enhance team efficiency and productivity while managing daily operations.</li>
-                    <li>Coordinate with cross-functional teams to ensure strategic alignment and collaboration.</li>
-                    <li>Provide coaching and guidance to team members to ensure performance targets are met.</li>
-                </ul>
-            </div>
 
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="flex justify-between items-start flex-wrap">
-                    <h4 class="job-title text-lg font-semibold">Senior Process Executive, Cognizant</h4>
-                    <span class="text-sm text-gray-500 font-medium mt-1 sm:mt-0">Jan 2019 - July 2022</span>
-                </div>
-                <p class="text-sm text-gray-600 mb-3">Gurugram, Haryana, India</p>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-700 text-sm">
-                    <li>Designed and managed performance-driven campaigns across Google Ads, including Search, Display, Video, and App formats.</li>
-                    <li>Optimized ad creatives, keywords, and bids to maximize Client ROI.</li>
-                    <li>Conducted audience research and segmentation to create targeted, high-impact campaigns.</li>
-                    <li>Educated new-to-Google customers on aligning business goals with sustainable advertising solutions.</li>
-                    <li>Analyzed campaign performance to provide actionable insights and strategic recommendations.</li>
-                </ul>
-            </div>
-            
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="flex justify-between items-start flex-wrap">
-                    <h4 class="job-title text-lg font-semibold">Solutions Engineer, Quatrro</h4>
-                    <span class="text-sm text-gray-500 font-medium mt-1 sm:mt-0">March 2018 - Oct 2018</span>
-                </div>
-                <p class="text-sm text-gray-600 mb-3">Gurgaon, India</p>
-                <ul class="list-disc list-outside ml-5 space-y-1 text-gray-700 text-sm">
-                    <li>Served as the primary point of contact for technical assistance, performing remote troubleshooting and diagnostics.</li>
-                    <li>Ensured adherence to Service Level Agreements (SLAs), maintaining a <strong>First Call Resolution (FCR) rate above 90%</strong>.</li>
-                    <li>Managed incident ownership and escalations while prioritizing conflicting demands.</li>
-                </ul>
-            </div>
-
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <h4 class="job-title text-lg font-semibold mb-2">Additional Experience</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                        <p class="font-bold">Customer Service Associate, Accenture</p>
-                        <p class="text-xs text-gray-500">Dec 2018 - Jan 2019</p>
-                        <p class="mt-1">Assisted users with the Google Pay App, resolving queries related to features and functionality.</p>
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-slate-800 pt-10">
+                    <div class="p-4">
+                        <div class="text-3xl font-bold text-white mb-1">9+</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Years Exp</div>
                     </div>
-                    <div>
-                        <p class="font-bold">Executive, ¡Energizer</p>
-                        <p class="text-xs text-gray-500">Aug 2016 - Sept 2017</p>
-                        <p class="mt-1">Technical Adviser for Electronic Arts (EA) Worldwide Customer Experience.</p>
+                    <div class="p-4">
+                        <div class="text-3xl font-bold text-white mb-1">90%</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">FCR Rate</div>
                     </div>
-                    <div class="col-span-1 md:col-span-2 mt-2">
-                        <p class="font-bold">Customer Care Executive, Vcare Web Development</p>
-                        <p class="text-xs text-gray-500">Aug 2015 - July 2016</p>
-                        <p class="mt-1">Provided support for a Wireless Telecom (Lifeline) Service Provider.</p>
+                    <div class="p-4">
+                        <div class="text-3xl font-bold text-white mb-1">AZ-305</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Certified</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-3xl font-bold text-white mb-1">Gen AI</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Integration</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </header>
 
-        </section>
-
-        <section class="mb-8 p-6 bg-white rounded-lg shadow-md">
-            
-            <div class="mb-6">
-                <h3 class="section-title text-2xl font-semibold border-l-4 pl-3 mb-4">Certifications & Skill Badges</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm font-medium">Microsoft Certified: Designing Azure Infrastructure (AZ-305)</span>
-                    <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm font-medium">Google Cloud Skill Badge: App Dev Environment</span>
-                    <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm font-medium">Google Cloud Skill Badge: Implement Load Balancing</span>
-                    <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm font-medium">McKinsey.org Forward Program</span>
-                    <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm font-medium">Google My Business</span>
+    <!-- Professional Summary -->
+    <section class="py-16 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i class="fas fa-quote-right text-8xl text-white"></i>
                 </div>
+                <h2 class="text-2xl font-bold text-white mb-4">Professional Summary</h2>
+                <p class="text-slate-300 leading-relaxed text-lg">
+                    Results-driven IT professional with over 9 years of diverse experience in IT-enabled services (ITES), digital marketing, and cloud architecture. Expert in leading high-performing teams, optimizing complex processes, and achieving exceptional campaign performance with a focus on exceeding SLAs. Adept at translating business goals into actionable strategies and leveraging cutting-edge technology, including Generative AI LLMs, to enhance learning experiences and operational efficiencies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section id="skills" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Core Competencies</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
             </div>
 
-            <div>
-                <h3 class="section-title text-2xl font-semibold border-l-4 pl-3 mb-4">Education</h3>
-                <div class="mb-3">
-                    <p class="font-semibold text-lg text-gray-800">M.Sc, Information Technology</p>
-                    <p class="text-gray-600">Annamalai University | 2007-2014</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chalkboard-teacher text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Training & L&D</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Curricular Framework</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Instructional Design</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Gen AI for Learning</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Stakeholder Consulting</li>
+                    </ul>
                 </div>
+
+                <!-- Skill Card 2 -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cloud text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cloud & Tech</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Cloud Architecture</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Azure Infrastructure</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>GCP App Dev</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Generative AI LLMs</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Marketing</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Google Ads (All Types)</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Campaign Optimization</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>ROI Maximization</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Audience Segmentation</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 text-orange-400 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cogs text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Operations Mgmt</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Team Leadership</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Workflow Optimization</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>Cross-functional Collab</li>
+                        <li><i class="fas fa-check text-primary-500 mr-2"></i>SLA Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Professional Experience</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative timeline-line space-y-12">
+                
+                <!-- Role 1: Cognizant - Training Specialist -->
+                <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group">
+                        <!-- Desktop Left Side (Date) -->
+                        <div class="hidden md:block w-1/2 pr-12 text-right">
+                            <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                            <span class="text-primary-400 font-medium">May 2025 - Present</span>
+                            <p class="text-slate-500 text-sm">Gurugram, Haryana</p>
+                        </div>
+                        
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-primary-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                        
+                        <!-- Content Card -->
+                        <div class="ml-10 md:ml-12 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <!-- Mobile Header -->
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                                    <span class="text-primary-400 font-medium text-sm">May 2025 - Present</span>
+                                </div>
+                                
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Training Specialist
+                                </h3>
+                                <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                                    <li>Lead development of curricular framework for Google Ads training to drive business results.</li>
+                                    <li>Leverage Generative AI LLMs to create hyper-personalized learning experiences.</li>
+                                    <li>Consult with stakeholders to define training strategies supporting evolving products.</li>
+                                    <li>Manage full instructional design process and delivery coordination.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Cognizant - Process Specialist -->
+                <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group flex-row-reverse">
+                        <!-- Desktop Right Side (Date) -->
+                        <div class="hidden md:block w-1/2 pl-12 text-left">
+                            <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                            <span class="text-primary-400 font-medium">July 2022 - Present</span>
+                        </div>
+                        
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-primary-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                        
+                        <!-- Content Card -->
+                        <div class="ml-10 md:mr-12 md:ml-0 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                                    <span class="text-primary-400 font-medium text-sm">July 2022 - Present</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Process Specialist
+                                </h3>
+                                <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                                    <li>Lead a team of professionals to achieve project goals and deliverables.</li>
+                                    <li>Develop strategies to enhance team efficiency and productivity.</li>
+                                    <li>Provide coaching and guidance to ensure performance targets are met.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3: Cognizant - Senior Process Executive -->
+                <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group">
+                        <div class="hidden md:block w-1/2 pr-12 text-right">
+                            <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                            <span class="text-primary-400 font-medium">Jan 2019 - July 2022</span>
+                        </div>
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-slate-600 rounded-full"></div>
+                        <div class="ml-10 md:ml-12 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">Cognizant</h4>
+                                    <span class="text-primary-400 font-medium text-sm">Jan 2019 - July 2022</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Senior Process Executive
+                                </h3>
+                                <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                                    <li>Designed and managed performance-driven campaigns (Google Ads: Search, Display, Video, App).</li>
+                                    <li>Optimized ad creatives, keywords, and bids to maximize Client ROI.</li>
+                                    <li>Analyzed campaign performance to provide strategic recommendations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 4: Accenture -->
+                <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group flex-row-reverse">
+                        <div class="hidden md:block w-1/2 pl-12 text-left">
+                            <h4 class="text-xl font-bold text-white">Accenture</h4>
+                            <span class="text-primary-400 font-medium">Dec 2018 - Jan 2019</span>
+                            <p class="text-slate-500 text-sm">Gurgaon, India</p>
+                        </div>
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-slate-600 rounded-full"></div>
+                        <div class="ml-10 md:mr-12 md:ml-0 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">Accenture</h4>
+                                    <span class="text-primary-400 font-medium text-sm">Dec 2018 - Jan 2019</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Customer Service Associate
+                                </h3>
+                                <p class="text-slate-400 text-sm">
+                                    Assisted users with the Google Pay App, resolving queries related to features and functionality.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 5: Quatrro -->
+                <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group">
+                        <div class="hidden md:block w-1/2 pr-12 text-right">
+                            <h4 class="text-xl font-bold text-white">Quatrro</h4>
+                            <span class="text-primary-400 font-medium">Mar 2018 - Oct 2018</span>
+                            <p class="text-slate-500 text-sm">Gurgaon, India</p>
+                        </div>
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-slate-600 rounded-full"></div>
+                        <div class="ml-10 md:ml-12 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">Quatrro</h4>
+                                    <span class="text-primary-400 font-medium text-sm">Mar 2018 - Oct 2018</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Solutions Engineer
+                                </h3>
+                                <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                                    <li>Maintained First Call Resolution (FCR) rate above 90%.</li>
+                                    <li>Performed remote troubleshooting and diagnostics for technical assistance.</li>
+                                    <li>Installed and configured hardware, software, and networks.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Role 6: iEnergizer -->
+                 <div class="relative z-10">
+                    <div class="md:flex items-center justify-between group flex-row-reverse">
+                        <div class="hidden md:block w-1/2 pl-12 text-left">
+                            <h4 class="text-xl font-bold text-white">iEnergizer</h4>
+                            <span class="text-primary-400 font-medium">Aug 2016 - Sept 2017</span>
+                        </div>
+                        <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-slate-600 rounded-full"></div>
+                        <div class="ml-10 md:mr-12 md:ml-0 md:w-1/2 w-auto">
+                            <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
+                                <div class="md:hidden mb-4">
+                                    <h4 class="text-xl font-bold text-white">iEnergizer</h4>
+                                    <span class="text-primary-400 font-medium text-sm">Aug 2016 - Sept 2017</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                                    <i class="fas fa-briefcase text-slate-400 mr-2 text-sm"></i> Executive
+                                </h3>
+                                <p class="text-slate-400 text-sm">
+                                    Technical Adviser for Electronic Arts (EA). Provided assistance for gamers across Xbox, PlayStation, PC, and Mobile platforms.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Education Column -->
                 <div>
-                    <p class="font-semibold text-lg text-gray-800">Senior Secondary (Maths & Computer Science)</p>
-                    <p class="text-gray-600">Govt. Model Senior Secondary School, Little Andaman | 2003-2005</p>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-800 pb-4">
+                        <i class="fas fa-graduation-cap text-primary-500 mr-3"></i>Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">M.Sc, Information Technology</h4>
+                                    <p class="text-slate-400">Annamalai University</p>
+                                </div>
+                                <span class="bg-slate-800 text-xs px-2 py-1 rounded text-slate-400">2007 - 2014</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Senior Secondary</h4>
+                                    <p class="text-slate-400">Govt. Model Senior Secondary School</p>
+                                    <p class="text-sm text-slate-500 mt-1">Maths & Computer Science</p>
+                                </div>
+                                <span class="bg-slate-800 text-xs px-2 py-1 rounded text-slate-400">2003 - 2005</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Certifications Column -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-800 pb-4">
+                        <i class="fas fa-certificate text-primary-500 mr-3"></i>Certifications
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-primary-500/50 transition-colors">
+                            <i class="fab fa-microsoft text-blue-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium">Microsoft Certified: Azure Infrastructure Solutions</h4>
+                                <p class="text-sm text-slate-500">AZ-305</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-primary-500/50 transition-colors">
+                            <i class="fab fa-google text-red-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium">Google Cloud Skill Badge: App Dev Environment</h4>
+                                <p class="text-sm text-slate-500">Google Cloud</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-primary-500/50 transition-colors">
+                            <i class="fab fa-google text-yellow-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium">Google Cloud Skill Badge: Load Balancing</h4>
+                                <p class="text-sm text-slate-500">Compute Engine</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-primary-500/50 transition-colors">
+                            <i class="fas fa-chart-bar text-green-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="text-white font-medium">McKinsey.org Forward Program</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:vikram.singh165@gmail.com" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
+                    <i class="fas fa-envelope text-primary-500"></i> vikram.singh165@gmail.com
+                </a>
+                <a href="tel:+917982748767" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
+                    <i class="fas fa-phone text-primary-500"></i> +91 7982748767
+                </a>
+                <a href="#" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
+                    <i class="fab fa-linkedin text-primary-500"></i> LinkedIn Profile
+                </a>
             </div>
             
-        </section>
+            <div class="text-slate-600 text-sm">
+                <p>&copy; 2026 Vikram Singh. All rights reserved.</p>
+                <p class="mt-2">Designed with <i class="fas fa-code text-primary-500 mx-1"></i> and AI.</p>
+            </div>
+        </div>
+    </footer>
 
-    </div>
+    <!-- JavaScript for Animations on Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.opacity = '1';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select elements to animate
+            const animatedElements = document.querySelectorAll('#skills .group, .glass-card, #education > div');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
