@@ -1,3 +1,6 @@
+Here is the updated code with the LinkedIn URL inserted into the footer section.
+
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -6,18 +9,14 @@
     <title>Vikram Singh | Cloud Architect & L&D Specialist</title>
     <meta name="description" content="Portfolio of Vikram Singh - Cloud Architect, Ops/L&D Specialist, and Digital Marketing Professional.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Custom Config & Styles -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -104,7 +103,6 @@
 </head>
 <body class="antialiased selection:bg-primary-500 selection:text-white">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-card border-b border-slate-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -122,7 +120,6 @@
                         <a href="#contact" class="bg-primary-600 hover:bg-primary-500 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors ml-4">Contact Me</a>
                     </div>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none">
                         <span class="sr-only">Open main menu</span>
@@ -131,7 +128,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div class="hidden md:hidden bg-slate-800" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="hover:bg-slate-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
@@ -142,9 +138,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header id="about" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Background decorative elements -->
         <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -172,7 +166,6 @@
                     </a>
                 </div>
 
-                <!-- Quick Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-slate-800 pt-10">
                     <div class="p-4">
                         <div class="text-3xl font-bold text-white mb-1">9+</div>
@@ -195,7 +188,6 @@
         </div>
     </header>
 
-    <!-- Professional Summary -->
     <section class="py-16 bg-slate-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
@@ -210,7 +202,6 @@
         </div>
     </section>
 
-    <!-- Core Competencies -->
     <section id="skills" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -219,7 +210,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Skill Card 1 -->
                 <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform">
                         <i class="fas fa-chalkboard-teacher text-xl"></i>
@@ -233,7 +223,6 @@
                     </ul>
                 </div>
 
-                <!-- Skill Card 2 -->
                 <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
                         <i class="fas fa-cloud text-xl"></i>
@@ -247,7 +236,6 @@
                     </ul>
                 </div>
 
-                <!-- Skill Card 3 -->
                 <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
                     <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400 group-hover:scale-110 transition-transform">
                         <i class="fas fa-chart-line text-xl"></i>
@@ -261,7 +249,6 @@
                     </ul>
                 </div>
 
-                <!-- Skill Card 4 -->
                 <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-primary-500/50 transition-colors group">
                     <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 text-orange-400 group-hover:scale-110 transition-transform">
                         <i class="fas fa-cogs text-xl"></i>
@@ -278,7 +265,6 @@
         </div>
     </section>
 
-    <!-- Experience Timeline -->
     <section id="experience" class="py-20 bg-slate-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -288,23 +274,18 @@
 
             <div class="relative timeline-line space-y-12">
                 
-                <!-- Role 1: Cognizant - Training Specialist -->
                 <div class="relative z-10">
                     <div class="md:flex items-center justify-between group">
-                        <!-- Desktop Left Side (Date) -->
                         <div class="hidden md:block w-1/2 pr-12 text-right">
                             <h4 class="text-xl font-bold text-white">Cognizant</h4>
                             <span class="text-primary-400 font-medium">May 2025 - Present</span>
                             <p class="text-slate-500 text-sm">Gurugram, Haryana</p>
                         </div>
                         
-                        <!-- Timeline Dot -->
                         <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-primary-500 rounded-full group-hover:scale-125 transition-transform"></div>
                         
-                        <!-- Content Card -->
                         <div class="ml-10 md:ml-12 md:w-1/2 w-auto">
                             <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
-                                <!-- Mobile Header -->
                                 <div class="md:hidden mb-4">
                                     <h4 class="text-xl font-bold text-white">Cognizant</h4>
                                     <span class="text-primary-400 font-medium text-sm">May 2025 - Present</span>
@@ -324,19 +305,15 @@
                     </div>
                 </div>
 
-                <!-- Role 2: Cognizant - Process Specialist -->
                 <div class="relative z-10">
                     <div class="md:flex items-center justify-between group flex-row-reverse">
-                        <!-- Desktop Right Side (Date) -->
                         <div class="hidden md:block w-1/2 pl-12 text-left">
                             <h4 class="text-xl font-bold text-white">Cognizant</h4>
                             <span class="text-primary-400 font-medium">July 2022 - Present</span>
                         </div>
                         
-                        <!-- Timeline Dot -->
                         <div class="absolute left-[11px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-900 border-4 border-primary-500 rounded-full group-hover:scale-125 transition-transform"></div>
                         
-                        <!-- Content Card -->
                         <div class="ml-10 md:mr-12 md:ml-0 md:w-1/2 w-auto">
                             <div class="glass-card p-6 rounded-xl hover:border-primary-500/30 transition-all">
                                 <div class="md:hidden mb-4">
@@ -356,7 +333,6 @@
                     </div>
                 </div>
 
-                <!-- Role 3: Cognizant - Senior Process Executive -->
                 <div class="relative z-10">
                     <div class="md:flex items-center justify-between group">
                         <div class="hidden md:block w-1/2 pr-12 text-right">
@@ -383,7 +359,6 @@
                     </div>
                 </div>
 
-                <!-- Role 4: Accenture -->
                 <div class="relative z-10">
                     <div class="md:flex items-center justify-between group flex-row-reverse">
                         <div class="hidden md:block w-1/2 pl-12 text-left">
@@ -409,7 +384,6 @@
                     </div>
                 </div>
 
-                <!-- Role 5: Quatrro -->
                 <div class="relative z-10">
                     <div class="md:flex items-center justify-between group">
                         <div class="hidden md:block w-1/2 pr-12 text-right">
@@ -437,7 +411,6 @@
                     </div>
                 </div>
 
-                 <!-- Role 6: iEnergizer -->
                  <div class="relative z-10">
                     <div class="md:flex items-center justify-between group flex-row-reverse">
                         <div class="hidden md:block w-1/2 pl-12 text-left">
@@ -466,12 +439,10 @@
         </div>
     </section>
 
-    <!-- Education & Certifications -->
     <section id="education" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 
-                <!-- Education Column -->
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-800 pb-4">
                         <i class="fas fa-graduation-cap text-primary-500 mr-3"></i>Education
@@ -499,7 +470,6 @@
                     </div>
                 </div>
 
-                <!-- Certifications Column -->
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-800 pb-4">
                         <i class="fas fa-certificate text-primary-500 mr-3"></i>Certifications
@@ -539,7 +509,6 @@
         </div>
     </section>
 
-    <!-- Footer / Contact -->
     <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-8">Let's Connect</h2>
@@ -550,7 +519,7 @@
                 <a href="tel:+917982748767" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
                     <i class="fas fa-phone text-primary-500"></i> +91 7982748767
                 </a>
-                <a href="#" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
+                <a href="https://www.linkedin.com/in/vikram-singh-41b600ab" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors bg-slate-900 px-6 py-3 rounded-full border border-slate-800 hover:border-primary-500">
                     <i class="fab fa-linkedin text-primary-500"></i> LinkedIn Profile
                 </a>
             </div>
@@ -562,7 +531,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Animations on Scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
@@ -592,3 +560,5 @@
     </script>
 </body>
 </html>
+
+```
